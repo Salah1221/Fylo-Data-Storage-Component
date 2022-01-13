@@ -1,0 +1,200 @@
+/* Import Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+/* End Import Fonts */
+/* Global Variables */
+:root {
+  --very-dark-blue: hsl(229, 57%, 11%);
+  --dark-blue: hsl(228, 56%, 26%);
+  --grayish-blue: hsl(229, 7%, 55%);
+  --pale-blue: hsl(243, 100%, 93%);
+  --gradient: linear-gradient(to right, hsl(6, 100%, 80%), hsl(335, 100%, 65%));
+}
+/* End Global Variables */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.651);
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--very-dark-blue);
+}
+.parent {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 930px;
+}
+.background-photo {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+}
+.logo-part,
+.storage-part {
+  background-color: var(--dark-blue);
+  border-radius: 10px;
+}
+.storage-part {
+  width: calc(100% - 390px);
+  height: 150px;
+  padding: 40px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.text {
+  margin-bottom: 15px;
+}
+.text span {
+  color: white;
+}
+.progress-bar-container {
+  background-color: hsla(229, 57%, 11%, 0.521);
+  height: 20px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding-left: 3px;
+}
+.progress-bar {
+  background: var(--gradient);
+  height: 14px;
+  width: 75%;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 2px;
+}
+.white-circle {
+  background-color: white;
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+}
+.min-and-max-storage {
+  display: flex;
+  margin-top: 5px;
+  justify-content: space-between;
+  align-items: center;
+}
+.min-storage,
+.max-storage {
+  color: var(--pale-blue);
+}
+.storage-left {
+  position: absolute;
+  top: -40px;
+  right: 40px;
+  background-color: white;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 185px;
+  height: 70px;
+  border-radius: 10px;
+  font-size: 40px;
+  color: black;
+}
+.storage-left::before {
+  content: "";
+  box-sizing: content-box;
+  border: 20px solid white;
+  border-left-color: transparent;
+  border-bottom-color: transparent;
+  position: absolute;
+  right: 0;
+  bottom: -20px;
+}
+.storage-left span {
+  color: var(--grayish-blue);
+  text-transform: uppercase;
+  margin-left: 10px;
+}
+.logo-part {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 200px;
+  width: 360px;
+  padding: 40px;
+  border-top-right-radius: 100px;
+}
+.icons {
+  display: flex;
+  justify-content: space-between;
+  width: 180px;
+}
+.folder-icon,
+.doc-icon,
+.upload-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--very-dark-blue);
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+}
+#desktop-back {
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+#mobile-back {
+  display: none;
+}
+.attribution {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 11px;
+}
+.attribution a {
+  font-size: inherit;
+  background-color: var(--very-dark-blue);
+  background: var(--gradient);
+  text-decoration: none;
+  font-weight: 700;
+  background-size: 100%;
+  background-repeat: repeat;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+/* Media Queries */
+@media (min-width: 760px) and (max-width: 957px) {
+  .container {
+    transform: scale(0.8);
+    flex-shrink: 0;
+  }
+}
+@media (min-width: 500px) and (max-width: 759px) {
+  .container {
+    flex-direction: column;
+    height: 380px;
+    flex-shrink: 0;
+    width: calc(100% - 390px);
+    transform: scale(0.8);
+  }
+  .storage-left::before {
+    display: none;
+  }
+}
+/* End Media Queries */
