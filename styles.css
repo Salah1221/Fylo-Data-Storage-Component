@@ -187,6 +187,15 @@ body {
   }
 }
 @media (max-width: 759px) {
+  .parent {
+    flex-grow: 1;
+  }
+  .background-photo {
+    height: 100%;
+  }
+  .background-photo img {
+    height: 100%;
+  }
   .container {
     flex-direction: column;
     height: 380px;
